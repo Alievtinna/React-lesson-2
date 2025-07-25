@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 function Counter() {
   // Объявляем состояние count и функцию для его обновления
