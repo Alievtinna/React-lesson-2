@@ -1,47 +1,17 @@
-import React from "react";
+import React, { useState } from 'react';
 
-class MyComponent extends React.Component {
-  state = {
-    count: 0,
-  };
+function Counter() {
+  // Объявляем состояние count и функцию для его обновления
+  const [count, setCount] = useState(0);
 
-  // увеличение
-  increment = () => {
-    this.setState({ count: this.state.count + 5 });
-  };
-
-  // Уменьшение на 1
-  decrement = () => {
-    this.setState({ count: this.state.count - 1 });
-  };
-
-  // Деление на 2
-  divideByTwo = () => {
-    this.setState({ count: this.state.count / 2 });
-  };
-
-  // Умножение на 2
-  multiplyByTwo = () => {
-    this.setState({ count: this.state.count * 2 });
-  };
-
-  // Сброс всех данных
-  reset = () => {
-    this.setState({ count: 0 });
-  };
-
-  render() {
-    return (
-      <div>
-        <h2>Счётчик: {this.state.count}</h2>
-        <button onClick={this.increment}>Увеличить</button>
-        <button onClick={this.decrement}>Уменьшить на 1</button>
-        <button onClick={this.divideByTwo}>Разделить на 2</button>
-        <button onClick={this.multiplyByTwo}>Умножить на 2</button>
-        <button onClick={this.reset}>Сброс</button>
-      </div>
-    );
-  }
+  return (
+    <div>
+      <h1>Счётчик: {count}</h1>
+      <button onClick={() => setCount(count + 1)}>Увеличить</button>
+      <button onClick={() => setCount(count - 1)}>Уменьшить</button>
+      <button onClick={() => setCount(0)}>Сбросить</button>
+    </div>
+  );
 }
 
-export default MyComponent;
+export default Counter;
